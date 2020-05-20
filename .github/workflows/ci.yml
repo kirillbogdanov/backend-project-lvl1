@@ -5,7 +5,9 @@ jobs:
      name: test
      runs-on: ubuntu-18.04
      steps:
-       - name: Print path
-         run: echo $PWD
+       - name: ls
+         run: ls -la
+       - name: Run install
+         run: make install
        - name: Run linter
          run: make lint
