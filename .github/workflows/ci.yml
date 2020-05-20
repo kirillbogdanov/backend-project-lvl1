@@ -5,5 +5,7 @@ jobs:
      name: test
      runs-on: ubuntu-18.04
      steps:
+       - name: Print path
+         run: echo $pwd
        - name: Run linter
          run: make lint
