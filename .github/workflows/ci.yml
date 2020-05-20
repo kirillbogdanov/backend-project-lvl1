@@ -11,6 +11,7 @@ jobs:
   test:
     name: test
     runs-on: ubuntu-18.04
+    needs: checkout
     steps:
       - name: Run linter
         run: make lint
