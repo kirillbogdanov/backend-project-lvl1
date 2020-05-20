@@ -6,4 +6,4 @@ const printGreeting = () => {
   console.log(`Hello, ${userName}!`);
 };
 
-export { printGreeting };
+export default printGreeting;

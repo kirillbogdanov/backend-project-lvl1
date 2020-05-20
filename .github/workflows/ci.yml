@@ -1,0 +1,9 @@
+name: ci
+on: push
+jobs:
+  test:
+     name: test
+     runs-on: ubuntu-18.04
+     steps:
+       - name: Run linter
+         run: make lint
