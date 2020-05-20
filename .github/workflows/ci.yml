@@ -6,6 +6,6 @@ jobs:
      runs-on: ubuntu-18.04
      steps:
        - name: Print path
-         run: echo $pwd
+         run: echo $PWD
        - name: Run linter
          run: make lint
