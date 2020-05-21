@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { even, calc } from './games/index.js';
+import { even, calc, gcd } from './games/index.js';
 
 const playGame = (gameName) => {
   console.log('Welcome to the Brain Games!');
@@ -17,6 +17,9 @@ const playGame = (gameName) => {
     case 'calc':
       getGameData = calc;
       break;
+    case 'gcd':
+      getGameData = gcd;
+      break;
     default:
       return;
   }
@@ -33,7 +36,7 @@ const playGame = (gameName) => {
 
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer === correctAnswer) {
+    if (userAnswer === correctAnswer.toString()) {
       console.log('Correct!');
     } else {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);

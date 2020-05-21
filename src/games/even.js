@@ -3,7 +3,7 @@ import getRandomNumber from '../utils/getRandomNumber.js';
 const isEven = (num) => num % 2 === 0;
 
 const even = () => {
-  const randomNumber = getRandomNumber(1, 100);
+  const randomNumber = getRandomNumber(1, 101);
   const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
 
   return [

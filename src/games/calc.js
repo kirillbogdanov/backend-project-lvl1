@@ -2,8 +2,8 @@ import getRandomNumber from '../utils/getRandomNumber.js';
 
 const calc = () => {
   const operations = ['+', '-', '*'];
-  const firstOperand = getRandomNumber(1, 100);
-  const secondOperand = getRandomNumber(1, 100);
+  const firstOperand = getRandomNumber(1, 101);
+  const secondOperand = getRandomNumber(1, 101);
   const operation = operations[getRandomNumber(0, 3)];
   const expression = `${firstOperand} ${operation} ${secondOperand}`;
   let correctAnswer;
@@ -24,7 +24,7 @@ const calc = () => {
   return [
     'What is the result of the expression?',
     expression,
-    correctAnswer.toString(),
+    correctAnswer,
   ];
 };
 
