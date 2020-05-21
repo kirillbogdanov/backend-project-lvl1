@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 import {
-  even, calc, gcd, progression,
+  even, calc, gcd, progression, prime,
 } from './games/index.js';
 
 const getGameData = (gameName) => {
@@ -13,6 +13,8 @@ const getGameData = (gameName) => {
       return gcd();
     case 'progression':
       return progression();
+    case 'prime':
+      return prime();
     default:
       return null;
   }
