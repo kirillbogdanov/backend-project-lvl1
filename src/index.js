@@ -3,6 +3,27 @@ import {
   even, calc, gcd, progression,
 } from './games/index.js';
 
+const getGameData = (gameName) => {
+  switch (gameName) {
+    case 'even':
+      return even();
+    case 'calc':
+      return calc();
+    case 'gcd':
+      return gcd();
+    case 'progression':
+      return progression();
+    default:
+      return null;
+  }
+};
+
+const printEndGameMessage = (isGameCompleted, userName) => {
+  const message = isGameCompleted ? `Congratulations, ${userName}!` : `Let's try again, ${userName}!`;
+
+  console.log(message);
+};
+
 const playGame = (gameName) => {
   console.log('Welcome to the Brain Games!');
 
@@ -10,32 +31,13 @@ const playGame = (gameName) => {
 
   console.log(`Hello, ${userName}!`);
 
-  let getGameData;
-
-  switch (gameName) {
-    case 'even':
-      getGameData = even;
-      break;
-    case 'calc':
-      getGameData = calc;
-      break;
-    case 'gcd':
-      getGameData = gcd;
-      break;
-    case 'progression':
-      getGameData = progression;
-      break;
-    default:
-      return;
-  }
-
-  const gameRules = getGameData()[0];
+  const [gameRules, questions] = getGameData(gameName);
   let isGameCompleted = true;
 
   console.log(gameRules);
 
-  for (let i = 0; i < 3; i += 1) {
-    const [, question, correctAnswer] = getGameData();
+  for (let i = 0; i < questions.length; i += 1) {
+    const [question, correctAnswer] = questions[i];
 
     console.log(`Question: ${question}`);
 
@@ -50,11 +52,7 @@ const playGame = (gameName) => {
     }
   }
 
-  if (isGameCompleted) {
-    console.log(`Congratulations, ${userName}!`);
-  } else {
-    console.log(`Let's try again, ${userName}!`);
-  }
+  printEndGameMessage(isGameCompleted, userName);
 };
 
 export default playGame;
