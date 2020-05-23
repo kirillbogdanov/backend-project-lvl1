@@ -22,7 +22,7 @@ const isPrime = (num) => {
   return true;
 };
 
-const prime = (numberOfRounds) => {
+const createPrimeGameData = (numberOfRounds) => {
   const result = [];
 
   for (let i = 0; i < numberOfRounds; i += 1) {
@@ -35,4 +35,4 @@ const prime = (numberOfRounds) => {
   return result;
 };
 
-export default prime;
+export default createPrimeGameData;

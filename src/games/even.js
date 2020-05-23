@@ -5,7 +5,7 @@ const NUMBER_HIGHER_BOUNDARY = 101;
 
 const isEven = (num) => num % 2 === 0;
 
-const even = (numberOfRounds) => {
+const createEvenGameData = (numberOfRounds) => {
   const result = [];
 
   for (let i = 0; i < numberOfRounds; i += 1) {
@@ -18,4 +18,4 @@ const even = (numberOfRounds) => {
   return result;
 };
 
-export default even;
+export default createEvenGameData;

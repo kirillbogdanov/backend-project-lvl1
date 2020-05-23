@@ -16,7 +16,7 @@ const findGcd = (a, b) => {
   return max;
 };
 
-const gcd = (numberOfRounds) => {
+const createGCDGameData = (numberOfRounds) => {
   const result = [];
 
   for (let i = 0; i < numberOfRounds; i += 1) {
@@ -29,4 +29,4 @@ const gcd = (numberOfRounds) => {
   return result;
 };
 
-export default gcd;
+export default createGCDGameData;

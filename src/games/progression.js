@@ -15,7 +15,7 @@ const createProgression = (firstItem, step, length = 10) => {
   return result;
 };
 
-const progression = (numberOfRounds) => {
+const createProgressionGameData = (numberOfRounds) => {
   const result = [];
 
   for (let i = 0; i < numberOfRounds; i += 1) {
@@ -33,4 +33,4 @@ const progression = (numberOfRounds) => {
   return result;
 };
 
-export default progression;
+export default createProgressionGameData;
