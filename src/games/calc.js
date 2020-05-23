@@ -1,8 +1,7 @@
-import getRandomNumber from '../utils/getRandomNumber.js';
-import { NUMBER_OF_ROUNDS } from '../utils/constants.js';
+import { getRandomNumber } from '../utils/utils.js';
 
 const NUMBER_LOWER_BOUNDARY = 1;
-const NUMBER_HIGHER_BOUNDARY = 101;
+const NUMBER_HIGHER_BOUNDARY = 100;
 const OPERATORS = ['+', '-', '*'];
 
 const calculate = (a, b, operator) => {
@@ -18,21 +17,20 @@ const calculate = (a, b, operator) => {
   }
 };
 
-const calc = () => {
-  const rules = 'What is the result of the expression?';
-  const result = [rules, []];
+const createCalcGameData = (numberOfRounds) => {
+  const result = [];
 
-  for (let i = 0; i < NUMBER_OF_ROUNDS; i += 1) {
+  for (let i = 0; i < numberOfRounds; i += 1) {
     const firstOperand = getRandomNumber(NUMBER_LOWER_BOUNDARY, NUMBER_HIGHER_BOUNDARY);
     const secondOperand = getRandomNumber(NUMBER_LOWER_BOUNDARY, NUMBER_HIGHER_BOUNDARY);
-    const operator = OPERATORS[getRandomNumber(0, OPERATORS.length)];
+    const operator = OPERATORS[getRandomNumber(0, OPERATORS.length - 1)];
     const expression = `${firstOperand} ${operator} ${secondOperand}`;
     const correctAnswer = calculate(firstOperand, secondOperand, operator);
 
-    result[1] = [...result[1], [expression, correctAnswer]];
+    result.push([expression, correctAnswer]);
   }
 
   return result;
 };
 
-export default calc;
+export default createCalcGameData;

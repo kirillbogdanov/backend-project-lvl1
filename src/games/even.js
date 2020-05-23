@@ -1,23 +1,21 @@
-import getRandomNumber from '../utils/getRandomNumber.js';
-import { NUMBER_OF_ROUNDS } from '../utils/constants.js';
+import { getRandomNumber } from '../utils/utils.js';
 
 const NUMBER_LOWER_BOUNDARY = 1;
-const NUMBER_HIGHER_BOUNDARY = 101;
+const NUMBER_HIGHER_BOUNDARY = 100;
 
 const isEven = (num) => num % 2 === 0;
 
-const even = () => {
-  const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
-  const result = [rules, []];
+const createEvenGameData = (numberOfRounds) => {
+  const result = [];
 
-  for (let i = 0; i < NUMBER_OF_ROUNDS; i += 1) {
+  for (let i = 0; i < numberOfRounds; i += 1) {
     const randomNumber = getRandomNumber(NUMBER_LOWER_BOUNDARY, NUMBER_HIGHER_BOUNDARY);
     const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
 
-    result[1] = [...result[1], [randomNumber, correctAnswer]];
+    result.push([randomNumber, correctAnswer]);
   }
 
   return result;
 };
 
-export default even;
+export default createEvenGameData;
