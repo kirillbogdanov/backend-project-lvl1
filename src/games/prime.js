@@ -1,5 +1,4 @@
 import getRandomNumber from '../utils/getRandomNumber.js';
-import { NUMBER_OF_ROUNDS } from '../utils/constants.js';
 
 const NUMBER_LOWER_BOUNDARY = 1;
 const NUMBER_HIGHER_BOUNDARY = 101;
@@ -23,15 +22,14 @@ const isPrime = (num) => {
   return true;
 };
 
-const prime = () => {
-  const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  const result = [rules, []];
+const prime = (numberOfRounds) => {
+  const result = [];
 
-  for (let i = 0; i < NUMBER_OF_ROUNDS; i += 1) {
+  for (let i = 0; i < numberOfRounds; i += 1) {
     const randomNumber = getRandomNumber(NUMBER_LOWER_BOUNDARY, NUMBER_HIGHER_BOUNDARY);
     const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
 
-    result[1] = [...result[1], [randomNumber, correctAnswer]];
+    result.push([randomNumber, correctAnswer]);
   }
 
   return result;

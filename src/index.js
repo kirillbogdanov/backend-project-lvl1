@@ -1,24 +1,4 @@
 import readlineSync from 'readline-sync';
-import {
-  even, calc, gcd, progression, prime,
-} from './games/index.js';
-
-const getGameData = (gameName) => {
-  switch (gameName) {
-    case 'even':
-      return even();
-    case 'calc':
-      return calc();
-    case 'gcd':
-      return gcd();
-    case 'progression':
-      return progression();
-    case 'prime':
-      return prime();
-    default:
-      return null;
-  }
-};
 
 const printEndGameMessage = (isGameCompleted, userName) => {
   const message = isGameCompleted ? `Congratulations, ${userName}!` : `Let's try again, ${userName}!`;
@@ -26,14 +6,13 @@ const printEndGameMessage = (isGameCompleted, userName) => {
   console.log(message);
 };
 
-const playGame = (gameName) => {
+const playGame = (questions, gameRules) => {
   console.log('Welcome to the Brain Games!');
 
   const userName = readlineSync.question('May I have your name? ');
 
   console.log(`Hello, ${userName}!`);
 
-  const [gameRules, questions] = getGameData(gameName);
   let isGameCompleted = true;
 
   console.log(gameRules);
