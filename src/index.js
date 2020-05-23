@@ -6,7 +6,7 @@ const playGame = (questions, gameRules) => {
   const userName = readlineSync.question('May I have your name? ');
 
   console.log(`Hello, ${userName}!`);
-  
+
   console.log(gameRules);
 
   for (let i = 0; i < questions.length; i += 1) {
