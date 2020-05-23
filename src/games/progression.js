@@ -1,9 +1,9 @@
-import getRandomNumber from '../utils/getRandomNumber.js';
+import { getRandomNumber } from '../utils/utils.js';
 
 const FIRST_ITEM_LOWER_BOUNDARY = 1;
-const FIRST_ITEM_HIGHER_BOUNDARY = 101;
+const FIRST_ITEM_HIGHER_BOUNDARY = 100;
 const STEP_LOWER_BOUNDARY = 1;
-const STEP_HIGHER_BOUNDARY = 11;
+const STEP_HIGHER_BOUNDARY = 10;
 
 const createProgression = (firstItem, step, length = 10) => {
   const result = [];
@@ -22,7 +22,7 @@ const createProgressionGameData = (numberOfRounds) => {
     const firstItem = getRandomNumber(FIRST_ITEM_LOWER_BOUNDARY, FIRST_ITEM_HIGHER_BOUNDARY);
     const step = getRandomNumber(STEP_LOWER_BOUNDARY, STEP_HIGHER_BOUNDARY);
     const prog = createProgression(firstItem, step);
-    const randomIndex = getRandomNumber(0, prog.length);
+    const randomIndex = getRandomNumber(0, prog.length - 1);
     const correctAnswer = prog[randomIndex];
 
     prog[randomIndex] = '..';

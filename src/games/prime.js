@@ -1,7 +1,7 @@
-import getRandomNumber from '../utils/getRandomNumber.js';
+import { getRandomNumber } from '../utils/utils.js';
 
 const NUMBER_LOWER_BOUNDARY = 1;
-const NUMBER_HIGHER_BOUNDARY = 101;
+const NUMBER_HIGHER_BOUNDARY = 100;
 
 const isPrime = (num) => {
   if (num === 0 || num === 1) {
