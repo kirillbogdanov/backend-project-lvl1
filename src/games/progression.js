@@ -1,10 +1,13 @@
+import startGame from '../index.js';
 import { getRandomNumber } from '../utils/utils.js';
+import { NUMBER_OF_ROUNDS } from '../utils/constants.js';
 
 const FIRST_ITEM_LOWER_BOUNDARY = 1;
 const FIRST_ITEM_HIGHER_BOUNDARY = 100;
 const STEP_LOWER_BOUNDARY = 1;
 const STEP_HIGHER_BOUNDARY = 10;
 const PROGRESSION_ITEM_REPLACER = '..';
+const GAME_RULES = 'What number is missing in the progression?';
 
 const createProgression = (firstItem, step, length = 10) => {
   const result = [];
@@ -43,4 +46,10 @@ const generateProgressionGameQuestions = (numberOfRounds) => {
   return result;
 };
 
-export default generateProgressionGameQuestions;
+const startProgressionGame = () => {
+  const gameQuestions = generateProgressionGameQuestions(NUMBER_OF_ROUNDS);
+
+  startGame(gameQuestions, GAME_RULES);
+};
+
+export default startProgressionGame;

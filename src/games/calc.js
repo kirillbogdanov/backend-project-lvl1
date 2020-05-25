@@ -1,8 +1,11 @@
+import startGame from '../index.js';
 import { getRandomNumber } from '../utils/utils.js';
+import { NUMBER_OF_ROUNDS } from '../utils/constants.js';
 
 const NUMBER_LOWER_BOUNDARY = 1;
 const NUMBER_HIGHER_BOUNDARY = 100;
 const OPERATORS = ['+', '-', '*'];
+const GAME_RULES = 'What is the result of the expression?';
 
 const calculate = (a, b, operator) => {
   switch (operator) {
@@ -33,4 +36,10 @@ const generateCalcGameQuestions = (numberOfRounds) => {
   return result;
 };
 
-export default generateCalcGameQuestions;
+const startCalcGame = () => {
+  const gameQuestions = generateCalcGameQuestions(NUMBER_OF_ROUNDS);
+
+  startGame(gameQuestions, GAME_RULES);
+};
+
+export default startCalcGame;

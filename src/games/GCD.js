@@ -1,7 +1,10 @@
+import startGame from '../index.js';
 import { getRandomNumber } from '../utils/utils.js';
+import { NUMBER_OF_ROUNDS } from '../utils/constants.js';
 
 const NUMBER_LOWER_BOUNDARY = 1;
 const NUMBER_HIGHER_BOUNDARY = 100;
+const GAME_RULES = 'Find the greatest common divisor of given numbers.';
 
 const findGCD = (a, b) => {
   if (b === 0) {
@@ -24,4 +27,10 @@ const generateGCDGameQuestions = (numberOfRounds) => {
   return result;
 };
 
-export default generateGCDGameQuestions;
+const startGCDGame = () => {
+  const gameQuestions = generateGCDGameQuestions(NUMBER_OF_ROUNDS);
+
+  startGame(gameQuestions, GAME_RULES);
+};
+
+export default startGCDGame;
