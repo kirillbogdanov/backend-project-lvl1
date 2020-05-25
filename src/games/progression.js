@@ -24,7 +24,7 @@ const replaceElementInProgression = (progression, index, replacer) => {
   return result;
 };
 
-const createProgressionGameData = (numberOfRounds) => {
+const generateProgressionGameQuestions = (numberOfRounds) => {
   const result = [];
 
   for (let i = 0; i < numberOfRounds; i += 1) {
@@ -43,4 +43,4 @@ const createProgressionGameData = (numberOfRounds) => {
   return result;
 };
 
-export default createProgressionGameData;
+export default generateProgressionGameQuestions;

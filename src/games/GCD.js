@@ -11,7 +11,7 @@ const findGCD = (a, b) => {
   return findGCD(b, a % b);
 };
 
-const createGCDGameData = (numberOfRounds) => {
+const generateGCDGameQuestions = (numberOfRounds) => {
   const result = [];
 
   for (let i = 0; i < numberOfRounds; i += 1) {
@@ -24,4 +24,4 @@ const createGCDGameData = (numberOfRounds) => {
   return result;
 };
 
-export default createGCDGameData;
+export default generateGCDGameQuestions;

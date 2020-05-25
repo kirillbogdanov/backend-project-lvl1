@@ -17,7 +17,7 @@ const calculate = (a, b, operator) => {
   }
 };
 
-const createCalcGameData = (numberOfRounds) => {
+const generateCalcGameQuestions = (numberOfRounds) => {
   const result = [];
 
   for (let i = 0; i < numberOfRounds; i += 1) {
@@ -33,4 +33,4 @@ const createCalcGameData = (numberOfRounds) => {
   return result;
 };
 
-export default createCalcGameData;
+export default generateCalcGameQuestions;

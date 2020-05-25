@@ -19,7 +19,7 @@ const isPrime = (num) => {
   return true;
 };
 
-const createPrimeGameData = (numberOfRounds) => {
+const generatePrimeGameQuestions = (numberOfRounds) => {
   const result = [];
 
   for (let i = 0; i < numberOfRounds; i += 1) {
@@ -32,4 +32,4 @@ const createPrimeGameData = (numberOfRounds) => {
   return result;
 };
 
-export default createPrimeGameData;
+export default generatePrimeGameQuestions;

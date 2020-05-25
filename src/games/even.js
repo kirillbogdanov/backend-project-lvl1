@@ -5,7 +5,7 @@ const NUMBER_HIGHER_BOUNDARY = 100;
 
 const isEven = (num) => num % 2 === 0;
 
-const createEvenGameData = (numberOfRounds) => {
+const generateEvenGameQuestions = (numberOfRounds) => {
   const result = [];
 
   for (let i = 0; i < numberOfRounds; i += 1) {
@@ -18,4 +18,4 @@ const createEvenGameData = (numberOfRounds) => {
   return result;
 };
 
-export default createEvenGameData;
+export default generateEvenGameQuestions;
