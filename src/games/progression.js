@@ -35,12 +35,11 @@ const generateProgressionGameQuestions = (numberOfRounds) => {
     const step = getRandomNumber(STEP_LOWER_BOUNDARY, STEP_HIGHER_BOUNDARY);
     const progression = createProgression(firstItem, step);
     const randomIndex = getRandomNumber(0, progression.length - 1);
+    const question = replaceElementInProgression(progression, randomIndex, PROGRESSION_ITEM_REPLACER).join(' ');
     const correctAnswer = progression[randomIndex];
 
 
-    result.push(
-      [replaceElementInProgression(progression, randomIndex, PROGRESSION_ITEM_REPLACER).join(' '), correctAnswer],
-    );
+    result.push([question, correctAnswer]);
   }
 
   return result;

@@ -13,9 +13,10 @@ const generateEvenGameQuestions = (numberOfRounds) => {
 
   for (let i = 0; i < numberOfRounds; i += 1) {
     const randomNumber = getRandomNumber(NUMBER_LOWER_BOUNDARY, NUMBER_HIGHER_BOUNDARY);
+    const question = randomNumber;
     const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
 
-    result.push([randomNumber, correctAnswer]);
+    result.push([question, correctAnswer]);
   }
 
   return result;

@@ -20,8 +20,10 @@ const generateGCDGameQuestions = (numberOfRounds) => {
   for (let i = 0; i < numberOfRounds; i += 1) {
     const firstNum = getRandomNumber(NUMBER_LOWER_BOUNDARY, NUMBER_HIGHER_BOUNDARY);
     const secondNum = getRandomNumber(NUMBER_LOWER_BOUNDARY, NUMBER_HIGHER_BOUNDARY);
+    const question = `${firstNum} ${secondNum}`;
+    const correctAnswer = findGCD(firstNum, secondNum).toString();
 
-    result.push([`${firstNum} ${secondNum}`, findGCD(firstNum, secondNum)]);
+    result.push([question, correctAnswer]);
   }
 
   return result;

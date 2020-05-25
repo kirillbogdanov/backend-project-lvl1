@@ -27,10 +27,10 @@ const generateCalcGameQuestions = (numberOfRounds) => {
     const firstOperand = getRandomNumber(NUMBER_LOWER_BOUNDARY, NUMBER_HIGHER_BOUNDARY);
     const secondOperand = getRandomNumber(NUMBER_LOWER_BOUNDARY, NUMBER_HIGHER_BOUNDARY);
     const operator = OPERATORS[getRandomNumber(0, OPERATORS.length - 1)];
-    const expression = `${firstOperand} ${operator} ${secondOperand}`;
-    const correctAnswer = calculate(firstOperand, secondOperand, operator);
+    const question = `${firstOperand} ${operator} ${secondOperand}`;
+    const correctAnswer = calculate(firstOperand, secondOperand, operator).toString();
 
-    result.push([expression, correctAnswer]);
+    result.push([question, correctAnswer]);
   }
 
   return result;
