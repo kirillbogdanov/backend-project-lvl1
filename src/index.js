@@ -1,5 +1,7 @@
 import readlineSync from 'readline-sync';
 
+const NUMBER_OF_ROUNDS = 3;
+
 const startGame = (gameQuestions, gameRules) => {
   console.log('Welcome to the Brain Games!');
 
@@ -28,4 +30,4 @@ const startGame = (gameQuestions, gameRules) => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default startGame;
+export { startGame, NUMBER_OF_ROUNDS };

@@ -1,6 +1,5 @@
-import startGame from '../index.js';
+import { startGame, NUMBER_OF_ROUNDS } from '../index.js';
 import { getRandomNumber } from '../utils/utils.js';
-import { NUMBER_OF_ROUNDS } from '../utils/constants.js';
 
 const FIRST_ITEM_LOWER_BOUNDARY = 1;
 const FIRST_ITEM_HIGHER_BOUNDARY = 100;
