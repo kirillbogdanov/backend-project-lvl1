@@ -1,9 +1,9 @@
 import { startGame, NUMBER_OF_ROUNDS } from '../index.js';
-import { getRandomNumber } from '../utils/utils.js';
+import { getRandomNumber } from '../utils.js';
 
 const NUMBER_LOWER_BOUNDARY = 1;
 const NUMBER_HIGHER_BOUNDARY = 100;
-const GAME_RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const GAME_DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num < 2) {
@@ -21,7 +21,7 @@ const isPrime = (num) => {
   return true;
 };
 
-const generatePrimeGameQuestions = (numberOfRounds) => {
+const generatePrimeGameQuestionAndAnswerPairs = (numberOfRounds) => {
   const result = [];
 
   for (let i = 0; i < numberOfRounds; i += 1) {
@@ -36,9 +36,9 @@ const generatePrimeGameQuestions = (numberOfRounds) => {
 };
 
 const startPrimeGame = () => {
-  const gameQuestions = generatePrimeGameQuestions(NUMBER_OF_ROUNDS);
+  const questionAndAnswerPairs = generatePrimeGameQuestionAndAnswerPairs(NUMBER_OF_ROUNDS);
 
-  startGame(gameQuestions, GAME_RULES);
+  startGame(questionAndAnswerPairs, GAME_DESCRIPTION);
 };
 
 export default startPrimeGame;

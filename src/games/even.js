@@ -1,13 +1,13 @@
 import { startGame, NUMBER_OF_ROUNDS } from '../index.js';
-import { getRandomNumber } from '../utils/utils.js';
+import { getRandomNumber } from '../utils.js';
 
 const NUMBER_LOWER_BOUNDARY = 1;
 const NUMBER_HIGHER_BOUNDARY = 100;
-const GAME_RULES = 'Answer "yes" if the number is even, otherwise answer "no".';
+const GAME_DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (num) => num % 2 === 0;
 
-const generateEvenGameQuestions = (numberOfRounds) => {
+const generateEvenGameQuestionAndAnswerPairs = (numberOfRounds) => {
   const result = [];
 
   for (let i = 0; i < numberOfRounds; i += 1) {
@@ -22,9 +22,9 @@ const generateEvenGameQuestions = (numberOfRounds) => {
 };
 
 const startEvenGame = () => {
-  const gameQuestions = generateEvenGameQuestions(NUMBER_OF_ROUNDS);
+  const questionAndAnswerPairs = generateEvenGameQuestionAndAnswerPairs(NUMBER_OF_ROUNDS);
 
-  startGame(gameQuestions, GAME_RULES);
+  startGame(questionAndAnswerPairs, GAME_DESCRIPTION);
 };
 
 export default startEvenGame;
